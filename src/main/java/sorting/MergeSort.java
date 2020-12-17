@@ -1,89 +1,58 @@
 package sorting;
 
-public class MergeSort 
-{
-	public static void main(String...s)
-	{
-		
-		int[] a= {21,32,12,4,21,1,43,12,54,6,7,8,3,54,32,56,76,89};
-		
-		
-		MergeSort ob=new MergeSort();
-		ob.sort(a, 0, a.length-1);
-		
-		for (int k=0;k<a.length;k++)
-		{
-			System.out.println(a[k]);
-		}	
-	}
-	
-	void sort(int[] a,int l,int r)
-	{
-		//starting is smaller than ending
-		if (l<r)
-		{
-			
-			int m=(l+r)/2;
-			sort(a,l,m);
-			sort(a,m+1,r);
-			merge(a,l,m,r);
-		}
-	}
-	
-	void merge(int[] a,int l,int m,int r)
-	{
-		
-		//size of arrays which  to be merged
-		int n1=m-l+1;//left to mid
-		int n2=r-m;//mid to right distance
-		
-		
-		//temp arrays generations
-		
-		int [] left=new int[n1];
-		int [] right=new int[n2];
-		
-		
-		//copy data to temp arrays
-		for(int i=0;i<n1;++i)
-			left[i]=a[i+1];
-		for(int j=0;j<n2;++j)
-			right[j]=a[m+1+j];
-		
-		//initial indexes of first and second subarray
-		
-		
-		int i=0;int j=0;
-		
-		//initial index of merged subarray
-		int k=l;
-		
-		
-		while (i < n1 && j < n2) {
-            if (left[i] <= right[j]) {
-                a[k] = left[i];
-                i++;
-            }
-            else {
-                a[k] = right[j];
-                j++;
-            }
-            k++;
-        }
- 
-        /* Copy remaining elements of left[] if any */
-        while (i < n1-1) {
-            a[k] = left[i];
-            i++;
-            k++;
-        }
- 
-        /* Copy remaining elements of right[] if any */
-        while (j < n2-1) {
-            a[k] = right[j];
-            j++;
-            k++;
-        }
-	}
+public class MergeSort {
 
-}
+	  public static void merge(int[] left_arr,int[] right_arr, int[] arr,int left_size, int right_size){
+	      
+	      int i=0,l=0,r = 0;
+	      //The while loops check the conditions for merging
+	      while(l<left_size && r<right_size){
+	          
+	          if(left_arr[l]<right_arr[r]){
+	              arr[i++] = left_arr[l++];
+	          }
+	          else{
+	              arr[i++] = right_arr[r++];
+	          }
+	      }
+	      while(l<left_size){
+	          arr[i++] = left_arr[l++];
+	      }
+	      while(r<right_size){
+	        arr[i++] = right_arr[r++];
+	      }
+	  }
+
+	  public static void mergeSort(int [] arr, int len){
+	      if (len < 2){return;}
+	      
+	      int mid = len / 2;
+	      int [] left_arr = new int[mid];
+	      int [] right_arr = new int[len-mid];
+	      
+	    //Dividing array into two and copying into two separate arrays
+	      int k = 0;
+	      for(int i = 0;i<len;++i){
+	          if(i<mid){
+	              left_arr[i] = arr[i];
+	          }
+	          else{
+	              right_arr[k] = arr[i];
+	              k = k+1;
+	          }
+	      }
+	    // Recursively calling the function to divide the subarrays further
+	      mergeSort(left_arr,mid);
+	      mergeSort(right_arr,len-mid);
+	    // Calling the merge method on each subdivision
+	      merge(left_arr,right_arr,arr,mid,len-mid);
+	  }
+
+	  public static void main( String args[] ) {
+	        int [] array = {12,1,10,50,5,15,45};
+	        mergeSort(array,array.length);
+	        for(int i =0; i< array.length;++i){
+	            System.out.print(array[i]+ " ");
+	        }
+	    }
+	}
