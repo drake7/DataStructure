@@ -25,7 +25,7 @@ public class Anagram {
 	 {
 		 
 		 char[] ars=s.toCharArray();
-		 Arrays.sort(ars);
+		 Arrays.sort(ars); 
 		 String s1="";
 		 for(int i=0;i<ars.length;i++)
 		 {
