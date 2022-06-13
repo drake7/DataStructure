@@ -13,8 +13,9 @@ public class A {
 		Scanner sc = new Scanner(System.in);
 		System.out.println(" Enter size of pattern (odd no. which is greater than 3)");
 		int n = sc.nextInt();
-		System.out.println("Enter your String ");
+		System.out.println("Enter your String for the banner ");
 		String str = sc.next();
+		
 
 		int size = str.length();
 
