@@ -5,15 +5,15 @@ public class Alphabet {
 	void D(int i, int n) {
 		for (int d = 0; d < (n / 2); d++) {
 			if (i == 0 || d == 0 || i == n - 1)
-				System.out.print(" D");
+				System.out.print(" DD");
 			else
 				System.out.print("  ");
 			if ((d == (n / 2) - 1) && (i == 0 || i == n - 1))
 				System.out.print("  ");
 			else if (d == (n / 2) - 1 && (i == n / 2))
-				System.out.print(" D");
+				System.out.print(" DD");
 			else if (d == (n / 2) - 1)
-				System.out.print(" D");
+				System.out.print(" DD");
 		}
 		System.out.print("      ");
 
