@@ -60,16 +60,20 @@ static String multiply(String num1, String num2)
 
 	public static void main(String[] args)
 	{
+		
 		String str1 = "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
-		String str2 = "1714546546546545454544548544544545";
+		String str2 = "483092840932840298409328409820348023984092840998243098";
 
+		//to handle negarive scenarios
 		if ((str1.charAt(0) == '-' || str2.charAt(0) == '-') &&
 			(str1.charAt(0) != '-' || str2.charAt(0) != '-'))
 			System.out.print("-");
 
+		//start multiply from the next character
 		if (str1.charAt(0) == '-')
 			str1 = str1.substring(1);
 
+		//start multiply from the next character
 		if (str2.charAt(0) == '-')
 			str2 = str2.substring(1);
 
