@@ -2,7 +2,6 @@ package dice;
 
 import java.util.Arrays;
 
-import com.sun.tools.javac.code.Attribute.Array;
 
 public class ThrowDice {
 
