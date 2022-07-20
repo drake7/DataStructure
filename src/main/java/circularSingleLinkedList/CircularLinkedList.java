@@ -8,11 +8,15 @@ public class CircularLinkedList {
 	public static void main(String...s)
 	{
 		CircularLinkedList cl=new CircularLinkedList();
+		TraverseCircularLinkedList tcll=new TraverseCircularLinkedList();
 		cl.addNode(19);
 		cl.addNode(21);
 		cl.addNode(29);
 		//print the cl list using its head
-		printCSLL(cl.head);
+		//printCSLL(cl.head);
+		//traversing the circular linkedlist
+		tcll.traverse(cl.head);
+		
 	
 	}
 	public static void printCSLL(Node head){
