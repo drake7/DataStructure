@@ -9,6 +9,7 @@ public class CircularLinkedList {
 	{
 		CircularLinkedList cl=new CircularLinkedList();
 		TraverseCircularLinkedList tcll=new TraverseCircularLinkedList();
+		SearchCircularLinkedList scll=new SearchCircularLinkedList();
 		cl.addNode(19);
 		cl.addNode(21);
 		cl.addNode(29);
@@ -16,6 +17,8 @@ public class CircularLinkedList {
 		//printCSLL(cl.head);
 		//traversing the circular linkedlist
 		tcll.traverse(cl.head);
+		//searching the circular linked list has the node
+		scll.search(cl.head, 29);
 		
 	
 	}
