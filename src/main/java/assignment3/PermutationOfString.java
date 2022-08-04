@@ -28,7 +28,7 @@ public class PermutationOfString {
 		  return String.valueOf(charArray);
 		}
 	 
-	 
+	 //method signature(string value,starting index,and size of an array)
 	 private static void permute(String s, int index, int N) {
 		 //if length is equal to index then string is already completed 
 		 if (index == N)

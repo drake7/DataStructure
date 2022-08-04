@@ -12,6 +12,12 @@ public class SalesPersonSort {
 	{		
 		System.out.println("Please provide the input for Id and Annual Sales Amount:");
 		Scanner sc=new Scanner(System.in);
+		
+		SalesPerson[] salespersonList=new SalesPerson[3];
+		salespersonList[1]=new SalesPerson(1,2000);
+		
+		
+		
 		ArrayList<SalesPerson> salesPersonList=new ArrayList<SalesPerson>();
 		for(int i=0;i<3;i++)
 		{
