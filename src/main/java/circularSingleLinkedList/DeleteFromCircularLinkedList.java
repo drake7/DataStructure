@@ -17,7 +17,7 @@ public class DeleteFromCircularLinkedList {
 		{
 			
 			head=head.next;
-			tail.next=head;
+		//	tail.next=head;
 		}
 		
 		

@@ -15,12 +15,9 @@ public class LineIntersection {
 		
 		ArrayList<Long> a1=new ArrayList<Long>();
 		ArrayList<Long> a2=new ArrayList<Long>();
-		a1.get
-		
 		
 		
 	}
 	
-	public 
 
 }
