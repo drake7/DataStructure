@@ -1,30 +1,56 @@
 package assignment3;
 
+
 public class Card {
-private char cardNumber;
-private String cardType ;
+	
+	//card number from A to K
+	public String CardNumber ;
+	
 
-public char getNumber() {
-	return cardNumber;
-}
 
-public void setNumber(char number) {
-	cardNumber= number;
-}
+
+	//suite of the card ie heart spade etc
+	public String CardType  ;
+	
+	
+
+	public String getCardNumber() {
+		return CardNumber;
+	}
+
+
+
+	public void setCardNumber(String cardNumber) {
+		CardNumber = cardNumber;
+	}
+
+
+
+	public String getCardType() {
+		return CardType;
+	}
+
+
+
+	public void setCardType(String cardType) {
+		CardType = cardType;
+	}
+
+
+
+	public Card(String cardType, String cardNumber) 
+	{
 		
-public String getCardType() {
-	return cardType;
+		CardNumber = cardNumber;
+		CardType = cardType;
+	}
+
+	@Override
+	public String toString() {
+		return "Card [CardNumber=" + CardNumber + ", CardType=" + CardType + "]";
+	}
+
 }
 
-public void setCardType(String type) {
-	cardType= type;
-}
-
-public Card(char cardnum, String cardtyp  ) {
 	
-	 cardNumber= cardnum;
-	 cardType = cardtyp;
-	
-}
 
-}

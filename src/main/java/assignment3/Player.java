@@ -1,38 +1,31 @@
 package assignment3;
 
+
 public class Player {
-  private String playerName;
-  private double playerBalance;
-  private String playerstatus;
-  
-  public String getPlayerName() {
-		return playerName;
+	
+	
+	public String playerName;
+	
+	private double Balance;
+
+	public String Status;
+
+	
+
+	public Player(String playerName,  String status) {
+		
+		playerName = playerName;
+		Balance = 5;
+		Status = status;
 	}
 
-	public void setPlayerName(String name) {
-		playerName= name;
+	public double getBalance() {
+		return Balance;
+	}
+
+	public void setBalance(double balance) {
+		Balance = balance;
 	}
 	
-	  public double getPlayerBalance() {
-			return playerBalance;
-		}
 
-		public void setPlayerBalance(double balance) {
-			playerBalance= balance;
-		}
-		
-		 public String getplayerstatus() {
-				return playerstatus;
-			}
-
-			public void setplayerstatus(String status) {
-				playerstatus= status;
-			}
-			
-			
-  public Player(String name , String status  ){
-	  playerName= name;
-	  playerBalance =  5.0;
-	  playerstatus=  status;
-  }
 }
