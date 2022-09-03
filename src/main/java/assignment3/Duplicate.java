@@ -20,7 +20,14 @@ public class Duplicate
 		}
 		//because cant check the last element,so store it anyway
 		newArray[j++] = sortArray[sortArray.length-1];
+		System.out.println("Array before removing duplicates:");
+		for(int i=0;i<sortArray.length;i++)
+		{
+			System.out.print(sortArray[i]+" ");
+		}
+		System.out.println();
 		System.out.print("Array after removing duplicates:");
+		
 		for(int i=0;i<j;i++)
 		{
 			System.out.print(newArray[i]+" ");

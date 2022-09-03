@@ -9,10 +9,9 @@ public class PermutationOfString {
 		
 		String input="GOD";
 		
-		String s1 = "GODS";
-		  int N = s1.length();
+		  int N = input.length();
 		  //starting 
-		  permute(s1, 0, N - 1);
+		  permute(input, 0, N - 1);
 		
 	}
 	

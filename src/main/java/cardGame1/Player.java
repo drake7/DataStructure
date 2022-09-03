@@ -14,7 +14,7 @@ public class Player {
 
 	public Player(String playerName,  String status) {
 		
-		playerName = playerName;
+		this.playerName = playerName;
 		Balance = 5;
 		Status = status;
 	}

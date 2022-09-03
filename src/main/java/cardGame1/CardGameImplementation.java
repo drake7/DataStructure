@@ -8,6 +8,9 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -26,6 +29,7 @@ public class CardGameImplementation extends JFrame {
 	static String[] cardNumber = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
 	static String[] cardType = { "heart", "club", "diamond", "spade" };
 	static HashMap<String, Integer> DeckNumberMapping = new HashMap<String, Integer>();
+	static FileWriter myWriter = null;
 	static int toggleIndex=1;
     // Computer as a player
 	static Player computer = new Player("computer", "win");
@@ -33,6 +37,14 @@ public class CardGameImplementation extends JFrame {
 	// User as a player
 	static Player user = new Player("Deepak", "win");
 	
+	
+	 //For Printing Purposes
+	static int roundNumber=0;
+	static String card1="";
+	static String card2="";
+	static String winner="";
+	static String result="";
+	static Double betValue=0.0;
 	
 	
 	static JLabel labelWelcome= new JLabel("Let's Play");
@@ -119,11 +131,10 @@ public class CardGameImplementation extends JFrame {
 				labelCard1.setText(firstCard.getCardNumber()+" of "+firstCard.getCardType());
 				labelCard2.setText(secondCard.getCardNumber()+" of "+secondCard.getCardType());
 				
-				
-				
 			}
 		});
 		
+		//when user bet
 		buttonBet.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -177,6 +188,7 @@ public class CardGameImplementation extends JFrame {
 				
 				if(Won)
 				{
+					
 					labelResult.setText("You Win this round.");
 					
 					user.setBalance(user.getBalance()+betAmount);
@@ -199,6 +211,19 @@ public class CardGameImplementation extends JFrame {
 				}
 				System.out.println(betAmount);
 				toggleIndex+=1;
+				
+				roundNumber=toggleIndex-1;
+				card1=firstCard.getCardNumber()+" of "+firstCard.getCardType();
+				 card2=secondCard.getCardNumber()+" of "+secondCard.getCardType();
+				 winner=Won?"User Win this Round":"User Lost this Round.";
+				 result=resultCard.getCardNumber() +":"+resultCard.getCardType();
+				betValue=betAmount;
+				try {
+					printToFile();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				}
 				else 
 				{
@@ -222,7 +247,7 @@ public class CardGameImplementation extends JFrame {
 		buttonFold.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
+				
 				if(toggleIndex%2==1)
 				{
 					checkWinner();
@@ -234,6 +259,18 @@ public class CardGameImplementation extends JFrame {
 				labelUserAmount.setText("Your Balance:"+user.getBalance());
 				labelComputerAmount.setText("CP Balance:"+computer.getBalance());
 				toggleIndex+=1;
+				roundNumber=toggleIndex-1;
+				card1=firstCard.getCardNumber()+" of "+firstCard.getCardType();
+				card2=secondCard.getCardNumber()+" of "+secondCard.getCardType();
+				winner="User Fold this Round";
+				result=resultCard.getCardNumber() +":"+resultCard.getCardType();
+				betValue=0.0;
+				try {
+					printToFile();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				}
 				else 
 				{
@@ -259,6 +296,7 @@ public class CardGameImplementation extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("toggleIndex:"+toggleIndex);
+
 			if(toggleIndex%2==0)
 			{
 				labelCards.setText("Computer's Cards are:");
@@ -372,6 +410,19 @@ public class CardGameImplementation extends JFrame {
 							}
 							System.out.println();
 							toggleIndex+=1;
+							
+							roundNumber=toggleIndex-1;
+							card1=firstCard.getCardNumber()+" of "+firstCard.getCardType();
+							card2=secondCard.getCardNumber()+" of "+secondCard.getCardType();
+							winner=Won?"User Win this Round":"User Lost this Round.";
+							result=resultCard.getCardNumber() +":"+resultCard.getCardType();
+							betValue=1.0;
+							try {
+								printToFile();
+							} catch (IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
 						}
 						//cp folds
 						else
@@ -384,6 +435,18 @@ public class CardGameImplementation extends JFrame {
 							labelUserAmount.setText("Your Balance:"+user.getBalance());
 							labelComputerAmount.setText("CP Balance:"+computer.getBalance());
 							toggleIndex+=1;
+							roundNumber=toggleIndex-1;
+							card1=firstCard.getCardNumber()+" of "+firstCard.getCardType();
+							 card2=secondCard.getCardNumber()+" of "+secondCard.getCardType();
+							 winner="Computer folded this round";
+							 result=resultCard.getCardNumber() +":"+resultCard.getCardType();
+							betValue=0.0;
+							try {
+								printToFile();
+							} catch (IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
 						}
 				}
 			}
@@ -401,7 +464,7 @@ public class CardGameImplementation extends JFrame {
 		buttonExit.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				return;
+				System.exit(0);
 			}
 		});
 		
@@ -427,7 +490,10 @@ public class CardGameImplementation extends JFrame {
 		this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
+		
+		myWriter= new FileWriter("BetDetails.txt");
+		
 		DeckNumberMapping.put("A", 1);
 		DeckNumberMapping.put("2", 2);
 		DeckNumberMapping.put("3", 3);
@@ -442,6 +508,7 @@ public class CardGameImplementation extends JFrame {
 		DeckNumberMapping.put("Q", 12);
 		DeckNumberMapping.put("K", 13);
 		
+				
 		
 		for (int j = 0; j < 4; j++) {
 			for (int i = 0; i < 13; i++) {
@@ -449,7 +516,12 @@ public class CardGameImplementation extends JFrame {
 			}
 		}
 		new CardGameImplementation();
-		
+		try {
+		}
+		finally
+		{
+			myWriter.close();
+		}
 	}
 	
 	public static Card pullCard() {
@@ -477,7 +549,21 @@ public class CardGameImplementation extends JFrame {
 		
 	}
 	
-
-
-
+	
+	public static void printToFile() throws IOException
+	{
+		File file = new File("BetDetails.txt");
+		
+		FileWriter fr = new FileWriter(file, true);
+		System.out.println("File printing");
+		fr.write("Round:"+roundNumber+"\n");
+		fr.write("Drawn cards are:"+"\n");
+		fr.write("First:"+card1+"\n");
+		fr.write("Second:"+card2+"\n");
+		fr.write("BetAmount:"+"\n");
+		fr.write("ResultCard:"+result+"\n");
+		fr.write(winner+"\n");
+		fr.close();
+	}
+	
 }

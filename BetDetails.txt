@@ -1,0 +1,7 @@
+Round:1
+Drawn cards are:
+First:K of spade
+Second:3 of diamond
+BetAmount:
+ResultCard:7:heart
+User Win this Round
