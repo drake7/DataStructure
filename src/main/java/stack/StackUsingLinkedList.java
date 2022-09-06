@@ -2,8 +2,8 @@ package stack;
 
 public class StackUsingLinkedList {
 
-	// top node of the linkedlist or can say top of the stack
-	Node top;
+	 // top node of the linkedlist or can say top of the stack
+	static Node top;
 
 	// empty constructor with top null
 	StackUsingLinkedList() {
@@ -13,7 +13,21 @@ public class StackUsingLinkedList {
 	public static void main(String[] args) {
 
 		StackUsingLinkedList stack = new StackUsingLinkedList();
-
+		stack.push(5);
+		stack.push(15);
+		stack.push(52);
+		stack.push(53);
+		stack.push(521);
+		stack.push(502);
+		
+		
+		stack.peek();
+		
+		stack.pop();
+		stack.pop();
+		
+		stack.print(top);
+		
 	}
 
 	// created a node class
@@ -74,4 +88,14 @@ public class StackUsingLinkedList {
 		top = null;
 
 	}
+	private void print(Node top) {
+		// deleting the reference in the top
+		Node temp=top;
+		while(temp!=null)
+		{
+			System.out.println(temp.data);
+			temp=temp.next;
+		}
+	}
+
 }
