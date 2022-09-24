@@ -13,6 +13,7 @@ public class SelectSort {
 			int index=findShortest(a, i+1);
 			
 			
+			
 			//if current index is greater than the shortest element,replace the values 
 			
 			if(a[i]>=a[index])
