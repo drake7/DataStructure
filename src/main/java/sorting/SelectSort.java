@@ -29,12 +29,14 @@ public class SelectSort {
 		
 	}
 
+	//finding shortest element index
 	public static int findShortest(int[] arr,int index)
 	{
 		int temp=arr[index];
 		int indexLocal=index;
 		for(int i=index;i<arr.length-1;i++)
 		{
+			//swap algorithm
 			if(arr[i]<=temp)
 			{
 				temp=arr[i];
