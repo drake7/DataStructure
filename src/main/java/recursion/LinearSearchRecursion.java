@@ -1,4 +1,6 @@
-class LinearSearchRecursion {
+package recursion;
+
+public class LinearSearchRecursion {
     public static void main(String[] args) {
   
     int [] arrayInfo = {1,2,3,4,5,6,12,32,12,35};
