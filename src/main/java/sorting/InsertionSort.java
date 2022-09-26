@@ -11,6 +11,7 @@ public class InsertionSort {
 		// choose the card and keep comparing with its next element unless u find an appropriate location
 		
 		
+		
 		for(int i=1;i<a.length;i++)
 		{
 			
