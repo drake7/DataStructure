@@ -10,6 +10,7 @@ public class BubbleSort
 		int temp=0;
 		for(int j=0;j<a.length-1;j++)
 		{
+		//run for each adjacent element and swap them if they are in wrong order.
 		for(int i=0;i<a.length-1;i++)
 		{
 			if (a[i]>a[i+1])
