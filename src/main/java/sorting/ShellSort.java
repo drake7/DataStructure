@@ -4,7 +4,7 @@ public class ShellSort {
 
 	public static void main(String[] args) {
 		
-		int[] a= {12,23,1,42,521,34};
+		int[] a= {12,23,1,42,1};
 		
 		sortingByShell(a);
 		for (int i : a) {
@@ -36,13 +36,15 @@ public class ShellSort {
 				System.out.println("\n");
 				System.out.println("Index of first Element of div:"+i);
 				System.out.println("First Element of an array:"+temp);
-				
+				 
 				int j;
 				for(j=i;j >= div && arrayForSort[j-div]>temp; j=j-div )
 				{
 					System.out.println("entered insertion:");
 					System.out.println("Value of j:"+j);
 					System.out.println("Value of div:"+div);
+
+					System.out.println("Swapped Element--"+arrayForSort[j]+":"+arrayForSort[j-div]);
 					arrayForSort[j]=arrayForSort[j-div];
 					
 				}
