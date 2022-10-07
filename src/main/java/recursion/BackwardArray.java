@@ -10,7 +10,7 @@ public class BackwardArray {
 	private static void printBackwardArray(int[] arrayInfo,int countPortion) {
 		//if array length is 10 and user ask to print 12 element.
 		if(arrayInfo.length<countPortion)
-		{	System.out.println("Invalid countPortion");
+		{	System.out.println("Invalid count Portion");
 			return;
 		}
 		if(countPortion<1)
