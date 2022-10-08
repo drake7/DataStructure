@@ -1,4 +1,4 @@
-package practice;
+package sorting;
 
 public class SelectionSortRecursive {
 	public static void main(String... s) {

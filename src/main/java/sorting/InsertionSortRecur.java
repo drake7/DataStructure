@@ -1,4 +1,4 @@
-package practice;
+package sorting;
 
 public class InsertionSortRecur {
 
