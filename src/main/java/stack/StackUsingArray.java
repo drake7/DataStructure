@@ -4,6 +4,8 @@ public class StackUsingArray {
 
 	static int[] stack = new int[10];
 
+	static int[] stack1 = new int[10];
+
 	static int top = -1;
 
 	public static void main(String[] args) {

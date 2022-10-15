@@ -20,8 +20,6 @@ public static void main(String...s)
 	                   a[i] = a[j];  
 	                   a[j] = temp;  
 	               } 
-			 
- 
 		 }
 	}
 	

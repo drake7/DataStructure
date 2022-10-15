@@ -31,7 +31,7 @@ public class StackUsingLinkedList {
 	}
 
 	// created a node class
-	class Node {
+	public class Node {
 
 		// value of the node
 		int data;
