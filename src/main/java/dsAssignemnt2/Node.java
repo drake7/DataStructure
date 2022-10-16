@@ -1,20 +1,20 @@
-package dsAssignment1;
+package dsAssignemnt2;
+
 
 public class Node<T> {
-
 	//data information 
-	public T data;
+	T data;
 	
 	
 	//address
-	public Node<T> next;
+	Node<T> next;
 	
 	//whenever i am going to create a new node,i need data and i need address
-	public Node(T data)
+	Node(T data)
 	{
 		this.data=data;
 		this.next=null;
 	}
 	
-	
+
 }

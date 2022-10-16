@@ -1,13 +1,13 @@
 package dsAssignemnt2;
 
-public class Student<T> {
+public class Student {
 
 	private String name;
 	private int StudentId;
 	private String email;
 	private String major;
 	private Double cgpa;
-	private LListApp<T> course;
+	private LListApp course;
 
 
 	public String getName() {
@@ -50,7 +50,7 @@ public class Student<T> {
 	}
 
 
-	public Student(String name, int studentId, String email, String major, Double cgpa, LListApp<T> course) {
+	public Student(String name, int studentId, String email, String major, Double cgpa, LListApp course) {
 		super();
 		this.name = name;
 		StudentId = studentId;
@@ -66,18 +66,28 @@ public class Student<T> {
 	}
 
 
+
 	public void setCgpa(Double cgpa) {
 		this.cgpa = cgpa;
 	}
 
 
-	public LListApp<T> getCourse() {
+	public LListApp getCourse() {
 		return course;
 	}
 
 
-	public void setCourse(LListApp<T> course) {
+	public void setCourse(LListApp course) {
 		this.course = course;
+	}
+
+	@Override
+	public String toString() {
+		
+		System.out.println( "Student [name=" + name + ", StudentId=" + StudentId + ", email=" + email + ", major=" + major
+				+ ", cgpa=" + cgpa + ", course=" + "");
+		course.printList();
+		return "";
 	}
 
 

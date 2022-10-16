@@ -19,7 +19,22 @@ public class DriverClass {
 		
 		
 		l.add(4,25);
-		l.printList();
+	//	l.printList();
+		
+		
+		LinkedList s=new LinkedList();
+		
+		s.add("haha");
+		s.add(7);
+		s.add("huhu");
+		s.add("hoho");
+		s.add("lala");
+		
+		s.printList();
+		
+		
+		
+		
 	//	System.out.println(l.getLength());
 	//	l.clear();
 	//	l.printList();

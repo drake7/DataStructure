@@ -6,7 +6,6 @@ public class LinkedList<T> implements ListInterface<T>{
 	//starting node 
 	Node<T> head;
 	
-	Node<T> temp;
 	@Override
 	public void add(T data) {
 		
