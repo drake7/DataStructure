@@ -89,7 +89,7 @@ public class StackUsingLinkedList {
 
 	}
 	private void print(Node top) {
-		// deleting the reference in the top
+		// deleting the reference in the top 
 		Node temp=top;
 		while(temp!=null)
 		{

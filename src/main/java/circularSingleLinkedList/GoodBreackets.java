@@ -9,6 +9,8 @@ public class GoodBreackets {
         List<String> combinations = new ArrayList();
         generateAll(new char[2 * n], 0, combinations);
         return combinations;
+        
+     //   combinations.remove(index)
     }
 
     public static void generateAll(char[] current, int pos, List<String> result) {

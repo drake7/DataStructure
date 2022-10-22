@@ -11,17 +11,17 @@ public class DriverClass {
 		
 		
 		l.add(6);
-		l.add(10);
+		l.add(10); 
 		l.add(20);
 		l.add(30);
 		l.add(40);
+		System.out.println(	l.contains(140));
 		
 		
-		
-		l.add(4,25);
-	//	l.printList();
-		
-		
+		Node[] n=l.toArray();
+		for (Node node : n) {
+			System.out.println(node.data);
+		}
 		LinkedList s=new LinkedList();
 		
 		s.add("haha");
@@ -30,7 +30,7 @@ public class DriverClass {
 		s.add("hoho");
 		s.add("lala");
 		
-		s.printList();
+		//s.printList();
 		
 		
 		

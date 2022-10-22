@@ -16,7 +16,7 @@ public interface ListInterface<T> {
 	
 	public abstract T getEntry(int position);
 	
-	public abstract T[] toArray(T head);
+	public abstract Node[] toArray();
 	
 	public abstract boolean contains(T entry);
 	
