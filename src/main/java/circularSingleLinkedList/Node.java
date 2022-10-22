@@ -9,6 +9,7 @@ this.data=data;
 this.next=null;
 }
 public Node()
+
 {
 this.next=null;
 }
