@@ -1,21 +1,29 @@
 package dsAssignment1;
-
-//implements that interface and provide the implementation of the methods
+//LinkedList Class
 public class LinkedList<T> implements ListInterface<T> {
 
 	// starting node
 	Node<T> head;
+	
 
+	/**
+	 * Method to add the Node in the List.
+	 * 
+	 * @param data
+	 * 
+	 */
 	@Override
 	public void add(T data) {
 
 		// 6
 
-		Node<T> temp = new Node<>(data);
+		Node<T> temp = new Node<T>(data);
 		// list is empty
 		if (this.head == null) {
 			head = temp;
-		} else {
+		} 
+		else
+		{
 			// temp node for traversing the array
 
 			Node<T> travelNode = head;
@@ -29,6 +37,14 @@ public class LinkedList<T> implements ListInterface<T> {
 		}
 
 	}
+	
+
+	/**
+	 * Method to add the Node in the List at specific position.
+	 * 
+	 * @param position,@param data 
+	 * 
+	 */
 
 	@Override
 	public void add(int position, T data) {
@@ -58,7 +74,15 @@ public class LinkedList<T> implements ListInterface<T> {
 			temp.next = saviour;
 		}
 	}
+	
+	
 
+	/**
+	 * Method to remove the Node from the List.
+	 * 
+	 * @param position
+	 * 
+	 */
 	@Override
 	public void remove(int position) {
 		// temp node for traversing the array
@@ -91,13 +115,28 @@ public class LinkedList<T> implements ListInterface<T> {
 		}
 	}
 
+
+	/**
+	 * Method to clear the List.
+	 * 
+	 * 
+	 * 
+	 */
 	@Override
 	public void clear() {
 		/// setting head will make head reference to null and GC will handle the
 		/// remaining
 		head = null;
 	}
+	
+	
 
+	/**
+	 * Method to replace the Node from the List at a given position.
+	 * 
+	 * @param position, @param data
+	 * 
+	 */
 	@Override
 	public void replace(int position, T data) {
 		Node<T> travelNode = head;
@@ -123,6 +162,13 @@ public class LinkedList<T> implements ListInterface<T> {
 
 	}
 
+
+	/**
+	 * Method to get the specific entry from the List based on the postion.
+	 * 
+	 * @param position
+	 * @return void
+	 */
 	@Override
 	public T getEntry(int position) {
 
@@ -133,7 +179,6 @@ public class LinkedList<T> implements ListInterface<T> {
 		int counter = 0;
 		Node<T> traverseNode = head;
 		while (counter != position && traverseNode.next != null) {
-			System.out.println(counter + ":" + position);
 			counter = counter + 1;
 			traverseNode = traverseNode.next;
 		}
@@ -142,6 +187,13 @@ public class LinkedList<T> implements ListInterface<T> {
 
 	}
 
+
+	/**
+	 * Method to convert the list to the array.
+	 * 
+	 * 
+	 * @return Node[]
+	 */
 	@Override
 	public Node[] toArray() {
 
@@ -159,6 +211,13 @@ public class LinkedList<T> implements ListInterface<T> {
 		return newArr;
 	}
 
+
+	/**
+	 * Method to check if list contains the entry.
+	 * 
+	 * @param entry
+	 * @return boolean
+	 */
 	@Override
 	public boolean contains(T entry) {
 
@@ -170,7 +229,7 @@ public class LinkedList<T> implements ListInterface<T> {
 
 		int counter = 0;
 		while (traversalNode != null) {
-			if (traversalNode.data == entry) {
+			if (traversalNode.data.equals(entry)) {
 				System.out.println("Entry Exist at index:" + counter);
 				return true;
 			}
@@ -183,6 +242,13 @@ public class LinkedList<T> implements ListInterface<T> {
 
 	}
 
+
+	/**
+	 * Method to get the length of the List.
+	 * 
+	 * 
+	 * @return int
+	 */
 	@Override
 	public int getLength() {
 		if (head == null) {
@@ -201,6 +267,13 @@ public class LinkedList<T> implements ListInterface<T> {
 		return counter;
 	}
 
+
+	/**
+	 * Method to check if the List is empty.
+	 * 
+	 * 
+	 * @return boolean
+	 */
 	@Override
 	public boolean isEmpty() {
 
@@ -210,6 +283,13 @@ public class LinkedList<T> implements ListInterface<T> {
 		return false;
 	}
 
+
+	/**
+	 * Method to display the list content.
+	 * 
+	 * 
+	 * 
+	 */
 	@Override
 	public void printList() {
 

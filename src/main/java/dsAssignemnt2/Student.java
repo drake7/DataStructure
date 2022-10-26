@@ -1,5 +1,7 @@
 package dsAssignemnt2;
 
+import dsAssignment1.LinkedList;
+
 public class Student {
 
 	private String name;
@@ -7,7 +9,7 @@ public class Student {
 	private String email;
 	private String major;
 	private Double cgpa;
-	private LListApp course;
+	private LinkedList course;
 
 
 	public String getName() {
@@ -50,7 +52,7 @@ public class Student {
 	}
 
 
-	public Student(String name, int studentId, String email, String major, Double cgpa, LListApp course) {
+	public Student(String name, int studentId, String email, String major, Double cgpa, LinkedList course) {
 		super();
 		this.name = name;
 		StudentId = studentId;
@@ -72,12 +74,12 @@ public class Student {
 	}
 
 
-	public LListApp getCourse() {
+	public LinkedList getCourse() {
 		return course;
 	}
 
 
-	public void setCourse(LListApp course) {
+	public void setCourse(LinkedList course) {
 		this.course = course;
 	}
 

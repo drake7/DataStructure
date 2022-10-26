@@ -23,8 +23,12 @@ public class MergeSort {
 	      }
 	  }
 
+	  //we called the merge sort
 	  public static void mergeSort(int [] arr, int len){
-	      if (len < 2){return;}
+	      //if length is less than 2 then no need to sort.
+		  if (len < 2){
+	    	  return;
+	    	  }
 	      
 	      int mid = len / 2;
 	      int [] left_arr = new int[mid];
@@ -39,6 +43,7 @@ public class MergeSort {
 	          else{
 	              right_arr[k] = arr[i];
 	              k = k+1;
+	              
 	          }
 	      }
 	    // Recursively calling the function to divide the subarrays further
@@ -50,6 +55,7 @@ public class MergeSort {
 
 	  public static void main( String args[] ) {
 	        int [] array = {12,1,10,50,5,15,45};
+	        //call the merge sort with array and its length
 	        mergeSort(array,array.length);
 	        for(int i =0; i< array.length;++i){
 	            System.out.print(array[i]+ " ");
