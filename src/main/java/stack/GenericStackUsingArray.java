@@ -1,6 +1,6 @@
 package stack;
 
-public class GenericStackUsingArray {
+public class GenericStackUsingArray{
 
 	static Node[] genArray = new Node[10];
 	static int top = -1;
@@ -22,9 +22,7 @@ public class GenericStackUsingArray {
 
 	public static void main(String[] args) {
 
-		
 		push('a');
-
 		push(1);
 		push("String");
 		push('d');
@@ -32,16 +30,11 @@ public class GenericStackUsingArray {
 		push('f');
 		pop();
 		isEmpty();
-		
-		
-		
-		for (int i = 0; i <=top; i++) {
+
+		for (int i = 0; i <= top; i++) {
 			System.out.println(genArray[i].data);
 		}
-		
-		
-		
-		
+
 	}
 
 	public static <T> void push(T data) {
@@ -73,15 +66,14 @@ public class GenericStackUsingArray {
 		System.out.println(genArray[top]);
 		return;
 	}
-	
-	public static <T> void isEmpty() {
+
+	public static <T> boolean isEmpty() {
 		if (top < 0) {
 			System.out.println("Stack is empty");
-			return;
+			return true;
+		} else {
+			System.out.println("Stack has elements in it and top is:" + (top + 1));
 		}
-		else {
-			System.out.println("Stack has elements in it and top is:"+(top+1));
-		}
-		return;
+		return false;
 	}
 }
