@@ -8,16 +8,25 @@ public class MergeSort {
 	      //The while loops check the conditions for merging
 	      while(l<left_size && r<right_size){
 	          
+	    	  //if left's first element is smaller than right's first element 
+	    	  //than put that element in array and enhance
 	          if(left_arr[l]<right_arr[r]){
-	              arr[i++] = left_arr[l++];
+	              arr[i] = left_arr[l];
+	              //and move one step further
+	              i++;l++;
 	          }
 	          else{
-	              arr[i++] = right_arr[r++];
+	        	  //add  the right array element
+	              arr[i] = right_arr[r];
+	              i++;
+	              r++;
 	          }
 	      }
+	      //then add the remaining one to the array 
 	      while(l<left_size){
 	          arr[i++] = left_arr[l++];
 	      }
+	      //then add the remaining one to the array
 	      while(r<right_size){
 	        arr[i++] = right_arr[r++];
 	      }
@@ -30,11 +39,14 @@ public class MergeSort {
 	    	  return;
 	    	  }
 	      
+		  //find mid and create twwo different array
 	      int mid = len / 2;
+	      //left array size should be till mid
 	      int [] left_arr = new int[mid];
+	      //right needs to be remaining portion
 	      int [] right_arr = new int[len-mid];
 	      
-	    //Dividing array into two and copying into two separate arrays
+	      //copying the array into two different portions of left and right
 	      int k = 0;
 	      for(int i = 0;i<len;++i){
 	          if(i<mid){
