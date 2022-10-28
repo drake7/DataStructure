@@ -17,16 +17,15 @@ public class GenericArrayStack<T extends Object>{
 	 
 	    /**
 	     * Adds new entry to the top of the stack
-	     * @param entry
+	     * @param gs
 	     * @throws Exception 
 	     */
-	    public void push(T entry) throws Exception {
+	    public void push(T gs) throws Exception {
 	        if(this.isStackFull()){
 	        	System.out.println("Stack Overflow");
 	            this.increaseStackCapacity();
 	        }
-	        System.out.println("Adding: "+entry);
-	        this.stackArray[++top] = entry;
+	        this.stackArray[++top] = gs;
 	    }
 	 
 	    /**
@@ -39,7 +38,6 @@ public class GenericArrayStack<T extends Object>{
 	        	System.out.println("Stack underflow.");
 	        }
 	        T entry = this.stackArray[top--];
-	        System.out.println("Removed entry: "+entry);
 	        return entry;
 	    }
 	 
@@ -79,12 +77,15 @@ public class GenericArrayStack<T extends Object>{
 	        this.stackSize = this.stackSize*2;
 	    }
 	 
+	    public void print()
+	    {
+	    	for (int i = 0; i < stackArray.length; i++) {
+			System.out.print(stackArray[i]);	
+			}
+	    }
 		public static void main(String args[]){
 			try {
 				GenericArrayStack<String> stringStack = new GenericArrayStack<String>(2);
-				stringStack.push("w3spoint");
-				GenericArrayStack<Integer> integerStack = new GenericArrayStack<Integer>(2);
-				integerStack.push(13);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
