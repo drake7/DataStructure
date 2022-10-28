@@ -1,19 +1,38 @@
 package queue;
 
+import java.io.ObjectInputStream.GetField;
+
 import stack.StackUsingLinkedList.Node;
 
 public class QueueUsingLinkedList {
 	
 	 // top node of the linkedlist or can say top of the stack
-	static Node top;
+	static Node first;
 
 	// empty constructor with top null
 	QueueUsingLinkedList() {
-		this.top = null;
+		this.first= null;
 	}
 
 	public static void main(String[] args) {
 		
+		QueueUsingLinkedList q=new QueueUsingLinkedList();
+		
+		q.enqueue(1);
+
+		q.enqueue(2);
+		q.enqueue(3);
+		q.dequeue();
+		q.enqueue(4);
+		q.enqueue(5);
+		q.peek();
+
+		q.dequeue();
+		q.enqueue(6);
+		q.printQueue();
+		System.out.println(q.getHead().data);
+		q.clear();
+		q.printQueue();
 	}
 	
 	
@@ -25,66 +44,74 @@ public class QueueUsingLinkedList {
 		// link to the next node
 		Node next;
 		
-		
-		
-		
-
-	}
-
-	private void enqueue(int data) {
-		// creating a new node for the data
-		Node temp = new Node();
-		// setting the data for a new node
-		top.next = temp;
-		// set the next element of temp to top as the new element will be taking place
-		// on top
-		temp.data = data;
-
-
-	}
-
-	// removing the element from the begining.
-	private void pop() {
-		// if top is null then no element to pop
-		if (top == null) {
-			System.out.print("Stack is empty and no element is present to remove.");
-			return;
-		}
-
-		// update the top pointer to point to the next node
-		top = (top).next;
-	}
-
-	// if the top of the stack is empty it is empty
-	private void isEmpty() {
-		if (top == null) {
-			System.out.println("Stack is Empty");
-			return;
-		}
-	}
-
-	private void peek() {
-		// if stack is empty
-		if (top == null) {
-			System.out.println("Stack is Empty");
-			return;
-		}
-
-		System.out.println(top.data);
-	}
-
-	private void delete() {
-		// deleting the reference in the top
-		top = null;
-
-	}
-	private void print(Node top) {
-		// deleting the reference in the top
-		Node temp=top;
-		while(temp!=null)
+		Node( int data)
 		{
-			System.out.println(temp.data);
-			temp=temp.next;
+			this.data=data;
 		}
+		Node()
+		{
+			
+		}
+	}
+
+	public void enqueue(int data) {
+		
+		if(first==null)
+		{
+			
+			first=new Node(data);
+			return;
+			
+		}
+		Node traverse = first;
+		while(traverse.next!=null)
+		{
+			traverse=traverse.next;
+		}
+		
+		Node temp=new Node(data);
+		traverse.next=temp;
+
+	}
+	
+	public void dequeue() {
+		
+		first=first.next;
+		
+	}
+	
+public void peek() {
+		
+	System.out.println("first elemenet is :"+first.data);
+		
+	}
+	
+	
+	public Node getHead() {
+		
+		return first;
+		
+	}
+	
+public void clear() {
+		System.out.println("queue clear called");
+	 first=null;
+		
+	}
+	public void printQueue() {
+		
+		if(first==null)
+		{
+			System.out.println("queue is empty");
+			return;
+		}
+		Node traverse = first;
+		while(traverse!=null)
+		{
+			System.out.println(traverse.data);
+			traverse=traverse.next;
+		}
+		
+
 	}
 }
