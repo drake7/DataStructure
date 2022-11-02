@@ -10,8 +10,6 @@ public class CheckBalance {
 	}
 
 	public static <T> boolean checkBalance(String input) throws Exception {
-
-
 		GenericArrayStack getBalance = new GenericArrayStack(10);
 
 		if (input.length() <= 0) {
@@ -48,8 +46,7 @@ public class CheckBalance {
 				check=(char) getBalance.pop();
 				if(check=='{' || check=='(')
 					{return false;}
-				break;
-			
+				break;	
 			}
 			
 		}
