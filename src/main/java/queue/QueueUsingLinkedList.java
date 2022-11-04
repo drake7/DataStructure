@@ -5,7 +5,9 @@ import java.io.ObjectInputStream.GetField;
 import stack.StackUsingLinkedList.Node;
 
 public class QueueUsingLinkedList {
+	//slides 
 	static Node first;
+	static Node last;
 	QueueUsingLinkedList() {
 		this.first = null;
 	}
