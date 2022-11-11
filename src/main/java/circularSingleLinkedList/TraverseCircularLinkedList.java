@@ -14,9 +14,6 @@ public class TraverseCircularLinkedList {
 				temp=temp.next;
 			}
 			while(head!=temp);
-			
-			
-			
 		}
 		
 		
