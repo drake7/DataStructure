@@ -47,8 +47,17 @@ public class QueueLL<T> implements QueueInterface<T>{
 
 	@Override
 	public T dequeue() {
-		// TODO Auto-generated method stub
+		//dequeue means removing the element from the front of the row
+		//no element to remove
+		if(this.firstNode==null)
+		{
+		System.out.println("Queue is empty");
 		return null;
+		}
+		T data = firstNode.data;
+		firstNode=firstNode.next;
+		
+		return data;
 	}
 
 	@Override
@@ -84,6 +93,9 @@ public class QueueLL<T> implements QueueInterface<T>{
 		newQueue.enqueue("deepak1");
 		newQueue.enqueue("deepak2");
 		newQueue.enqueue("deepak3");
+		System.out.println(newQueue.getFront());
+		System.out.println(newQueue.dequeue());
+		System.out.println(newQueue.dequeue());
 		System.out.println(newQueue.getFront());
 		
 	}
