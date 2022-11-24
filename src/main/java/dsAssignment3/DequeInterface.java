@@ -16,5 +16,7 @@ public interface DequeInterface<T> {
 
 	public boolean isEmpty();
 
-	public boolean clear();
+	public void clear();
+	
+	public void print();
 }

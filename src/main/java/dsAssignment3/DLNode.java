@@ -7,9 +7,9 @@ package dsAssignment3;
  */
 public class DLNode<T> {
 
-	private T data;
-	private DLNode<?> next;
-	private DLNode<?> previous;
+	public T data;
+	public DLNode<?> next;
+	public DLNode<?> previous;
 
 	public DLNode(T data, DLNode<?> next, DLNode<?> previous) {
 		super();
@@ -17,6 +17,15 @@ public class DLNode<T> {
 		this.next = next;
 		this.previous = previous;
 	}
+
+	
+
+	@Override
+	public String toString() {
+		return  data+"";
+	}
+
+
 
 	public T getData() {
 		return data;
