@@ -28,16 +28,18 @@ public class QueueLL<T> implements QueueInterface<T>{
 	@Override
 	public void enqueue(T newEntry) {
 		// TODO Auto-generated method stub
-		
+		//new element will be added to the last node of the queue
 		Node newNode=new Node(newEntry);
 		
+		//we will check if we have anything at the end,if not then we know its empty so 
 		if(this.lastNode == null)
 		{
+			//if one node only it means that node is first and last node
 			this.firstNode = this.lastNode = newNode;
 			return;
 		}
 		
-		
+		//else we point lastnode'address to the new node and we will say that new node is the lastnode
 		this.lastNode.next=newNode;//nextElement is the newNode
 		this.lastNode=newNode;//lastNode is entered at end
 		
