@@ -77,11 +77,19 @@ public class QueueLL<T> implements QueueInterface<T>{
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
+		
+		if(firstNode==null)
+		{
+			return true;
+		}
+		
 		return false;
 	}
 
 	@Override
 	public void clear() {
+	
+		firstNode = lastNode = null;
 		
 	}
 	
@@ -89,20 +97,33 @@ public class QueueLL<T> implements QueueInterface<T>{
 	public static void main(String[] args) throws Exception {
 	
 		QueueLL<String> newQueue = new QueueLL<>();
+		System.out.println("Queue Empty?"+newQueue.isEmpty());
 		newQueue.enqueue("deepak");
 		newQueue.enqueue("deepak1");
 		newQueue.enqueue("deepak2");
 		newQueue.enqueue("deepak3");
 		System.out.println(newQueue.getFront());
+		System.out.println("Queue Empty?"+newQueue.isEmpty());
 		System.out.println(newQueue.dequeue());
 		System.out.println(newQueue.dequeue());
 		System.out.println(newQueue.getFront());
+	System.out.println(" ** ** ");
+		newQueue.print();
+		newQueue.clear();
+		System.out.println("Queue Empty?"+newQueue.isEmpty());
 		
 	}
 
 	@Override
 	public void print() {
 		// TODO Auto-generated method stub
+		Node temp=firstNode;
+		
+		while(temp!=null)
+		{
+			System.out.println(temp.data);
+			temp=temp.next;
+		}
 		
 	}
 
