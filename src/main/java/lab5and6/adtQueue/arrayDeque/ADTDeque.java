@@ -40,7 +40,6 @@ public class ADTDeque {
 		deque.push(2365);
 
 		System.out.println("Head element remove : " + deque.remove());
-
 		System.out.println("The final array is: " + deque);
 	}
 
