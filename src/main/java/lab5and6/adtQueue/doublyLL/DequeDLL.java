@@ -19,11 +19,17 @@ public class DequeDLL<T> implements QueueInterface<T> {
 		private DLNode next;
 		private DLNode previous;
 		
-		public DLNode(T data,DLNode next,DLNode previous)
+		public DLNode(T data)
 		{
 			this.data = data;
-			this.next = next;
-			this.previous = previous;
+			this.next=null;
+			this.previous=null;
+		}
+		public DLNode()
+		{
+			this.data = null;
+			this.next=null;
+			this.previous=null;
 		}
 	}
 	
@@ -35,19 +41,23 @@ public class DequeDLL<T> implements QueueInterface<T> {
 	
 	public void addToFront(T newEntry)
 	{
-		DLNode newNode = new DLNode(newEntry,null,null);
+		DLNode newNode = new DLNode(newEntry);
 		if(isEmpty())
 		{
-			last=newNode;
-			newNode.next=first;
+			//only one element in the queue
+			first=last=newNode;
 		}
 		else
 		{
+			//new Node will come in front and will point to existing front
+			newNode.next=first;
+			
+			//firstnode's previous will point to new Node
 			first.previous=newNode;
+			
+			//new node now becomes the firstNode
+			first=newNode;
 		}
-		
-		first=newNode;
-	
 	}
 
 	@Override
@@ -58,18 +68,22 @@ public class DequeDLL<T> implements QueueInterface<T> {
 	
 	public void addToBack(T newEntry)
 	{
-		DLNode newNode = new DLNode(newEntry,null,null);
-		if(isEmpty())
+		DLNode newNode = new DLNode(newEntry);
+		if(last==null)
 		{
-			first=newNode;
-			newNode.previous=last;
+		first=last=newNode;
 		}
 		else
 		{
+			//newNode will point to last
+			newNode.previous=last;
+			
+			//last's next should be point to newNode
 			last.next=newNode;
+			//
+			last=newNode;
 		}
 		
-		last=newNode;
 	}
 
 	@Override
@@ -98,6 +112,28 @@ public class DequeDLL<T> implements QueueInterface<T> {
 		
 		return last.data;
 	}
+	
+	public void removeFront()
+	{
+		if(first==null && last==null)
+		{
+			System.out.println("Queue is empty");
+			return;
+		}
+		
+		DLNode temp=first;
+		first=first.next;
+		
+		//only one element was there
+		if(first==null)
+		{
+			last= null;
+		}
+		else
+		{
+			first.previous=null;
+		}
+	}
 
 	@Override
 	public boolean isEmpty() {
@@ -120,6 +156,20 @@ public class DequeDLL<T> implements QueueInterface<T> {
 	public void print() {
 		// TODO Auto-generated method stub
 		
+		if(isEmpty())
+		{
+			System.out.println("Queue is empty");
+			return;
+		}
+		
+		DLNode temp=new DLNode();
+		temp=first;
+
+		while(temp!=null)
+		{
+			System.out.println(temp.data);
+			temp=temp.next;
+		}
 	}
 
 	public static void main(String[] args) throws Exception {
@@ -128,8 +178,7 @@ public class DequeDLL<T> implements QueueInterface<T> {
 		newQueue.addToFront("Deepak");
 		newQueue.addToFront("Deepak1");
 		newQueue.addToBack("Kumar");
-		System.out.println(newQueue.getFront());
-		System.out.println(newQueue.getBack());
-		
+		newQueue.addToBack("Kumar2");
+		newQueue.print();
 	}
 }
