@@ -57,4 +57,6 @@ public class MyStack<T> {
 	{
 		myList.print();
 	}
+	
+	
 }

@@ -154,23 +154,13 @@ public class QueueCA<T> implements QueueInterface<T> {
 
 	public static void main(String[] args) throws Exception {
 		QueueCA<String> newQueue = new QueueCA<>(5);
-		System.out.println("QueueEmpty:"+newQueue.isEmpty());
 		newQueue.enqueue("Deepak kumar");
-		newQueue.enqueue("Deepak kumar1");
-		newQueue.enqueue("Deepak kumar2");
-		newQueue.enqueue("Deepak kumar3");
-		newQueue.enqueue("Deepak kumar4");
 		newQueue.print();
 		newQueue.dequeue();
-		newQueue.dequeue();
 		newQueue.print();
-		System.out.println("QueueEmpty:"+newQueue.isEmpty());
 		newQueue.enqueue("Deepak kumar5");
-		newQueue.enqueue("Deepak kumar6");
 		newQueue.print();
 		newQueue.clear();
-
-		System.out.println("QueueEmpty:"+newQueue.isEmpty());
 		System.out.println(newQueue.getFront());
 	}
 

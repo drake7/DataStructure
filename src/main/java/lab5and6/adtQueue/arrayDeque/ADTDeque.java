@@ -9,10 +9,6 @@ public class ADTDeque {
 	public static void main(String[] args) {
 		Deque<Integer> deque = new ArrayDeque<Integer>(10);
 		deque.add(1);
-		deque.add(2);
-		deque.add(3);
-		deque.add(4);
-		deque.add(5);
 
 		for (Integer i : deque) {
 			System.out.print(i);
