@@ -12,6 +12,7 @@ public class MinHeap<T extends Comparable<T>> {
 		heap = (T[]) new Comparable[capacity];
 		length = 0; // means queue is empty
 	}
+	
 
 	// Insert a new value, Time O(h), Space O(1), n is number of items in heap
 	// h is height of heap (complete binary tree) h = log(n)
