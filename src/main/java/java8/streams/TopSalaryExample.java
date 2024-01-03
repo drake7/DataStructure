@@ -27,6 +27,7 @@ public class TopSalaryExample {
         List<Employee> top3Employees = getTopNEmployees(employees, 3);
         List<Employee> top3AgeEmployees = getTopAgeNEmployees(employees, 3);
 
+        
         // Display the results
         System.out.println("Top 3 employees with the highest salaries:");
         for (int i = 0; i < top3Employees.size(); i++) {
