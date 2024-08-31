@@ -17,15 +17,23 @@ public class BestDayToBuyStock {
 	private static  int checkDays(int[] a) {
 		int diff=0,maxProfit = 0;
 		int slow = 0,fast = 1;
+		
+		//slow pointer and fast pointer , fast is less than length so we are checking till last day
 		while(fast<a.length)
 		{
+			
+			//now we will check what we are selling at
 			diff = a[fast] - a[slow];
+			//if diff greater than max profit, move
 			if(diff>maxProfit)
 			{
+				
 				maxProfit = diff;
 			//	fast++;
 			}
 			//System.out.println(maxProfit+","+fast+","+slow);
+			//if the next day price is less then change to next day and then work
+			//for example 10,1,5 -> now 1 < 10 so we will check from 1 onward
 			if(a[fast]<a[slow])
 			{
 				slow = fast;

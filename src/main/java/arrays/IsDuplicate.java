@@ -4,7 +4,7 @@ public class IsDuplicate {
 	
 	public static void main(String[] args) {
 	
-		String s = "Helothisdpkk";
+		String s = "helothisdpkk";
 		
 		char[] ch = s.toCharArray();
 		
@@ -22,6 +22,7 @@ public class IsDuplicate {
 		boolean[] char_set = new boolean[128];
 		for(int i = 0;i<str.length();i++)
 		{
+			System.out.println(str.charAt(i));
 			int val = str.charAt(i);
 			if(char_set[val])
 			{

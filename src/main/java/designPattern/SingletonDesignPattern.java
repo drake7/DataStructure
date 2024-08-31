@@ -16,12 +16,12 @@ public class SingletonDesignPattern {
 	
 	public static SingletonDesignPattern getSingletonInstance() {
 		
-		if(instance == null)
+		if(instance == null) //first check without synch keyword so no locking
 		{
 			synchronized(SingletonDesignPattern.class)
 			{
 				
-				if(instance == null)
+				if(instance == null) // second check with synchronized key word(double locking)
 				{
 					instance = new SingletonDesignPattern();
 				}

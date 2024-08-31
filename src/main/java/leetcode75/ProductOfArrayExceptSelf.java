@@ -4,7 +4,7 @@ public class ProductOfArrayExceptSelf {
 
 	public static void main(String[] args) {
 	
-		int[] a= {1,2,5,1,8};
+		int[] a= {1,0,5,1,8};
 		
 		int[] result = getProducts(a);
 		
