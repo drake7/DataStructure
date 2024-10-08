@@ -2,13 +2,14 @@ package binaryTree;
 
 public class BinaryTree {
 
+	// root parent
 	static Node root;
 	
 	
 	class Node{
-		int data;
-		Node left;
-		Node right;
+		int data; //data information
+		Node left; //left child
+		Node right; //right child
 		Node(int data)
 		{
 			this.data=data;
@@ -16,18 +17,20 @@ public class BinaryTree {
 			this.right=null;
 		}
 	}
-	
+	// because the lower values goes on left side then we need to check the left first
 	private Node addRecursive(Node current,int value)
 	{
+		//check if root is null
 		if(current==null)
 		{
 			return new Node(value);
 		}
-		
+		//fill on the left side first
 		if(value<current.data)
 		{
 			 current.left = addRecursive(current.left, value);
 		}
+		//if value is greater then right
 		else if(value>current.data)
 		{
 			current.right = addRecursive(current.right, value);
@@ -45,13 +48,34 @@ public class BinaryTree {
 	
 	
 	public void traverseInOrder(Node node) {
+		
+		// in order, so parent is in between left and righ
 	    if (node != null) {
 	        traverseInOrder(node.left);
 	        System.out.print(" " + node.data);
 	        traverseInOrder(node.right);
 	    }
 	}
+	public void traversePreOrder(Node node) {
+	    if (node != null) {
+	    	//it is all about parent node,  if pre than parent node before everything else
+	    	System.out.print(" " + node.data);
+	        traversePreOrder(node.left);
+	    	traversePreOrder(node.right);
+	 
+	    }
+	}
 	
+
+	public void traversePostOrder(Node node) {
+	    if (node != null) {
+	    	//it is all about parent node,  if pre than parent node before everything else
+	        traversePostOrder(node.left);
+	 	    traversePostOrder(node.right);
+	 	    System.out.print(" " + node.data);
+	 
+	    }
+	}
 	private boolean containsNodeRecursive(Node current, int value) {
 	    if (current == null) {
 	        return false;
@@ -108,7 +132,8 @@ public class BinaryTree {
 		BinaryTree bt=new BinaryTree();
 		bt.add(5);
 		bt.add(6);
-		bt.add(61231);bt.add(3126);
+		bt.add(61231);
+		bt.add(3126);
 		bt.add(7);
 		bt.add(121);
 		bt.add(3);
