@@ -1,11 +1,9 @@
 package stack;
 
-import stack.Node;
-
-public class Stack {
+public class StackCustom {
 	// 
 	public static void main(String[] args) {
-		Stack s = new Stack();
+		StackCustom s = new StackCustom();
 		s.addToTop(1);
 		s.addToTop(2);
 		s.addToTop(6);
