@@ -1,0 +1,61 @@
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# Maven target directory
+/target/
+
+# IDE-specific files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse-specific files
+.project
+.classpath
+.settings/
+bin/
+
+# VS Code
+.vscode/
+
+# IntelliJ IDEA
+out/
+
+# MacOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+ehthumbs.db
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+# Files generated at runtime
+*.war
+*.ear
+*.jar
+
+# Maven specific files
+.mvn/
+!**/src/main/**/resources/**/.gitkeep
+dependency-reduced-pom.xml
+release.properties
+buildNumber.properties
+
+# Ignore custom configuration files
+*.config
+*.env
+
+# Exclude build-specific files
+*.bak
+*.backup
+
+# OS-specific swap files
+*~ 
