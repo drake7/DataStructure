@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Solution {
+	
+	//create a list 
     List<List<Integer>> answer = new ArrayList<>();
     
+    //combination of 
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<Integer> combination = new ArrayList<>();
         f(0, target, combination, candidates);
