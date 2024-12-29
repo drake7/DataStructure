@@ -2,7 +2,7 @@ package recursion;
 
 public class BinaryStrings {
     public static void main(String[] args) {
-        int N = 3; // Length of the binary strings
+        int N = 2; // Length of the binary strings
         generateBinaryStrings(N, "");
     }
 
