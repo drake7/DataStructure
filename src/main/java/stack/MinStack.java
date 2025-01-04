@@ -2,28 +2,39 @@ package stack;
 
 import java.util.Stack;
 
+
 class MinStack {
+	
+	//create 2 stacks
 	private Stack<Integer> stack;
 	private Stack<Integer> minStack;
 
+	//initialize both stacks
 	public MinStack() {
 		stack = new Stack<>();
 		minStack = new Stack<>();
 	}
 
 	public void push(int val) {
+		// push in normal stack as it is
 		stack.push(val);
+		
 		// Push the current minimum value onto the minStack.
+		//if stack is empty and new value is greater than the top value of the stack
 		if (minStack.isEmpty() || val <= minStack.peek()) {
+			
 			minStack.push(val);
 		}
 	}
 
 	public void pop() {
 		// If the value being popped is the minimum, pop it from the minStack too.
+		// if top of stack == minimum value then remove from min stack as well else dont touch
 		if (stack.peek().equals(minStack.peek())) {
 			minStack.pop();
 		}
+		
+		//stack pop
 		stack.pop();
 	}
 
